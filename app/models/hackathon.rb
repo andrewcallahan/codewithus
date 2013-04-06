@@ -4,6 +4,4 @@ class Hackathon < ActiveRecord::Base
   has_many :participants
   has_many :users, :through => :participants
 
-  has_many :hackathon_creators
-  has_many :creators, class_name: "User", :through => :hackathon_creators, foreign_key: "creator_id"
 end
