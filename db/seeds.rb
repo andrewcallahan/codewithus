@@ -67,12 +67,7 @@ Hacakathon.create(name: "Hack@Flatiron", location: "26 W 33rd St New York, NY", 
   h.end = DateTime.new(2013,4,18,17,0,0)
   h.save!
 
-    
-# Hackathon Creators
-HacakthonCreator.create(user_id: 1, hackathon_id: 1)
-
-
 # Participants
 User.all.each do |user|
-  HacakthonCreator.create(user_id: user.id, hackathon_id: 1)
+  Participants.create(user_id: user.id, hackathon_id: 1)
 end
