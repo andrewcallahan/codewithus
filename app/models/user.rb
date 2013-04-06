@@ -4,4 +4,9 @@ class User < ActiveRecord::Base
   has_many :participants
   has_many :hackathons, :through => :participants
 
+  has_many :user_skills
+  has_many :skills, :through => :user_skills
+
+  has_many :user_skillcategories
+  has_many :skillcategories, :through => :user_skillcategories
 end
