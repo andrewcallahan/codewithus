@@ -28,8 +28,16 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.3.3)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.3.1.0)
+      sass (~> 3.2)
     builder (3.0.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -37,9 +45,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    css_parser (1.3.4)
+      addressable
+    curb (0.7.18)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    figaro (0.6.3)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     hike (1.2.1)
     i18n (0.6.4)
     journey (1.0.4)
@@ -51,8 +65,20 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailgun-rails (0.1.1)
+      actionmailer
+      activesupport
+      curb
     mime-types (1.22)
     multi_json (1.7.2)
+    multimap (1.1.2)
+    nokogiri (1.5.9)
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -79,6 +105,14 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    rmagick (2.13.2)
+    roadie (2.3.4)
+      actionmailer (> 3.0.0, < 3.3.0)
+      css_parser
+      nokogiri (>= 1.4.4)
+      sprockets
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -104,9 +138,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
+  figaro
   jquery-rails
+  mailgun-rails
+  multimap
+  nokogiri
+  paperclip
   rails (= 3.2.12)
+  rest-client
+  rmagick
+  roadie
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
