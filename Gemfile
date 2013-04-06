@@ -20,18 +20,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'bcrypt-ruby', :require => 'bcrypt'
-gem 'bootstrap-sass'
-gem 'figaro'
-gem 'jquery-rails'
-gem 'mailgun-rails'
-gem 'multimap'
-gem 'nokogiri'
 gem 'paperclip'
-gem 'rails', '3.2.12'
-gem 'rest-client'
 gem 'rmagick'
-gem 'roadie'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -4,4 +4,8 @@ class Hackathon < ActiveRecord::Base
   has_many :participants
   has_many :users, :through => :participants
 
+  has_attached_file :image, :styles => { :small => "50x50#" }, :default_url => "avatar.jpg"
+  validates_attachment_presence :image unless :image
+  validates_attachment_content_type :image, :content_type => ['image/jpg', 'image/jpeg', 'image/png']
+
 end
