@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130406201033) do
+ActiveRecord::Schema.define(:version => 20130406205444) do
 
   create_table "hackathon_creators", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "creator_id"
     t.integer  "hackathon_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20130406201033) do
     t.integer  "hackathon_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "role"
   end
 
   create_table "skillcategories", :force => true do |t|
