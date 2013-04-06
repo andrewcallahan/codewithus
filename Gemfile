@@ -37,3 +37,7 @@ gem 'paperclip'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'pry'
+gem 'pry-rails'
+gem 'better_errors'
