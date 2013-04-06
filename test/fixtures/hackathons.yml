@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  start: 2013-04-06 16:03:29
+  end: 2013-04-06 16:03:29
+  location: MyString
+  description: MyText
+  capacity: 1
+  price: 1
+  image: MyString
+  image_content_type: MyString
+  image_file_name: MyString
+
+two:
+  name: MyString
+  start: 2013-04-06 16:03:29
+  end: 2013-04-06 16:03:29
+  location: MyString
+  description: MyText
+  capacity: 1
+  price: 1
+  image: MyString
+  image_content_type: MyString
+  image_file_name: MyString
