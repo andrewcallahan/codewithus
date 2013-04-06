@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130406205444) do
 
-  create_table "hackathon_creators", :force => true do |t|
-    t.integer  "creator_id"
-    t.integer  "hackathon_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
-
   create_table "hackathons", :force => true do |t|
     t.string   "name"
     t.datetime "start"
