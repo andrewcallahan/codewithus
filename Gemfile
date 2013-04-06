@@ -21,7 +21,7 @@ group :assets do
 end
 
 gem 'paperclip'
-gem 'rmagick'
+# gem 'rmagick'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
