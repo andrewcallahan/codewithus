@@ -43,4 +43,8 @@ class User < ActiveRecord::Base
     return user
   end
 
+  def has_identity?
+    self.identities.present?
+  end
+
 end
