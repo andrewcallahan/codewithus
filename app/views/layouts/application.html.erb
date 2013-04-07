@@ -8,15 +8,16 @@
 </head>
 <body>
   <div class="navbar navbar-static-top">
-    <div class="navbar inner">
+    <div class="navbar inner wrapper">
       <div class="container">
-        <ul class="nav">
-          <li class="active">
+        <ul class="nav nav-wrapper">
+          <li class="active divider-vertical">
             <%= link_to "codewithus", root_path%>
           </li>
-          <li><%= link_to "hackathons", hackathons_path, class: "pull right" %></li>
-          <li><%= link_to "login", login_path, class: "pull right" %></li>
-          <li><%= link_to "sign-up", signup_path, class: "pull right" %></li>
+          <li class="divider-vertical"><%= link_to "hackathons", hackathons_path %></li>
+          <li class="divider-vertical"><%= link_to "login", login_path, class: "pull-right" %></li>
+          <li class="divider-vertical"><%= link_to "sign-up", signup_path, class: "pull-right" %></li>
+          <li class="divider-vertical"><%= link_to "add hackathon", new_hackathon_path, class: "pull-right" %></li>
         </ul>
       </div>
     </div>
