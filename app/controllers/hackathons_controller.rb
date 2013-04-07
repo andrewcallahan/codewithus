@@ -5,7 +5,7 @@ class HackathonsController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @hackathons = Hackathon.all
+    @hackathons = Hackathon.order("start ASC")
   end
 
   # GET /users/1
@@ -17,8 +17,7 @@ class HackathonsController < ApplicationController
       format.json { render json: @user }
     end
   end
-    # GET /stars/new
-  # GET /stars/new.json
+
   def new
     @hackathon = Hackathon.new
 
@@ -33,10 +32,8 @@ class HackathonsController < ApplicationController
     @hackathon = Hackathon.find(params[:id])
   end
 
-  # POST /stars
-  # POST /stars.json
   def create
-    @hackathon = Hackathon.new(params[:star])
+    @hackathon = Hackathon.new(params[:hackathon])
 
     respond_to do |format|
       if @hackathon.save
@@ -49,8 +46,6 @@ class HackathonsController < ApplicationController
     end
   end
 
-  # PUT /stars/1
-  # PUT /stars/1.json
   def update
     @hackathon = Hackathon.find(params[:id])
 
@@ -65,8 +60,6 @@ class HackathonsController < ApplicationController
     end
   end
 
-  # DELETE /stars/1
-  # DELETE /stars/1.json
   def destroy
     @hackathon = Hackathon.find(params[:id])
     @hackathon.destroy

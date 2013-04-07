@@ -12,6 +12,12 @@
  *= require_tree .
  */
 
+  /* application CSS */
+
+
+
+ /* hackathon index CSS */
+
  .location {
     cursor: pointer;
     display: inline-block;
