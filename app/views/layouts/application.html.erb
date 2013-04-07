@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-static-top">
+    <div class="navbar inner">
+      <div class="container">
+        <ul class="nav">
+          <li class="active">
+            <%= link_to "codewithus", root_path%>
+          </li>
+          <li><%= link_to "hackathons", hackathons_path, class: "pull right" %></li>
+          <li><%= link_to "login", login_path, class: "pull right" %></li>
+          <li><%= link_to "sign-up", signup_path, class: "pull right" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <%= yield %>
   </div>

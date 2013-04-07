@@ -1,5 +1,7 @@
 class HackathonsController < ApplicationController
 
+  skip_before_filter :login_required, :only => ["index"]
+
   # GET /users
   # GET /users.json
   def index
