@@ -1,4 +1,9 @@
-<div><%= image_tag @user.image %></div>
+<% if current_user.identities %>
+  <div><%= image_tag facebook_pic %></div>
+<% else %>
+  <div><%= image_tag @user.image %></div>
+<% end %>
+
 <ul>
     <li><%= @user.name %></li>
     <li><%= @user.email %></li>
