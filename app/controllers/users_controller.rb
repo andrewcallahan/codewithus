@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :login_required, :only => ["new", "create"]
+  skip_before_filter :login_required, :only => ["new", "create", "facebook_auth"]
 
 
   # GET /users
@@ -61,8 +61,8 @@ class UsersController < ApplicationController
   end
 
   def facebook_auth
-    raise params.inspect
-    user = User.from_facebook_omniauth(env["omniauth.auth"])
+    auth_hash = request.env['omniauth.auth']
+    user = User.from_facebook_omniauth(auth_hash)
     session[:user_id] = user.id
     redirect_to finish_account_signup_path
   end
