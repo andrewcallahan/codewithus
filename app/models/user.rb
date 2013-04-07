@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates :password, :presence => { :on => :create }
+  validates_presence_of :email
+  validates_uniqueness_of :email
 
   has_many :participants
   has_many :hackathons, :through => :participants
