@@ -7,15 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Users
-User.create(name: "Andrew", email: "andrew.callahan@flatironschool.com", password: "password")
+User.create(name: "Andrew", email: "andrew.callahan@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
   u = User.last
   u.image = File.open('db/seed_images/andrewcallahan.jpeg')
   u.save!
-User.create(name: "Danny", email: "danny.olinsky@flatironschool.com", password: "password")
+User.create(name: "Danny", email: "danny.olinsky@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
   u = User.last
   u.image = File.open('db/seed_images/dannyheadshot2.jpg')
   u.save!
-User.create(name: "Anthony", email: "anthony.wijnen@flatironschool.com", password: "password")
+User.create(name: "Anthony", email: "anthony.wijnen@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
   u = User.last
   u.image = File.open('db/seed_images/anthony_crop.jpg')
   u.save!
