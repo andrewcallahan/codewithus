@@ -61,6 +61,7 @@ class UsersController < ApplicationController
   end
 
   def facebook_auth
+    raise params.inspect
     user = User.from_facebook_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to finish_account_signup_path
