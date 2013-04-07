@@ -17,15 +17,14 @@ class User < ActiveRecord::Base
   has_many :user_skillcategories
   has_many :skillcategories, :through => :user_skillcategories
 
-  def self.from_omniauth(auth)
+  def self.from_facebook_omniauth(auth)
   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
     user.identities.provider = auth.provider
     user.identities.uid = auth.uid
     user.name = auth.info.name
-    user.image = auth.info.image
+    user.identities.image = auth.info.image
     user.identities.atoken = auth.credentials.token
     user.identities.oauth_expires_at = Time.at(auth.credentials.expires_at)
-    user.save!
   end
 end
 
