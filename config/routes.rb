@@ -6,7 +6,7 @@ Codewithus::Application.routes.draw do
   get 'logout' => 'sessions#destroy'
 
   get 'finish_account_signup' => "users#new_from_facebook"
-  post 'finish_account_signup' => "users#create_from_facebook"
+  post 'finish_account_signup' => "users#create_from_facebook", :as => "finish_account_signup"
 
   match 'auth/facebook/callback', to: 'users#facebook_auth'
   get 'auth/failure', to: redirect('/')

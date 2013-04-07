@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :cell, :email, :image, :image_content_type, :image_file_name, :name, :password, :password_confirmation
 
   has_secure_password
-  validates :password, :presence => { :on => :create }
+  # validates :password, :presence => { :on => :create }
   validates_presence_of :email
   validates_uniqueness_of :email
 
@@ -22,8 +22,25 @@ class User < ActiveRecord::Base
   has_many :identities
 
   def self.from_facebook_omniauth(auth)
-    binding.pry
-    user = User.where(:uid => auth[:uid]).first_or_initialize
+    user = User.where(:email => auth[:info][:email]).first_or_initialize
+    
+    # create user with default password
+    user.password_digest = 'dbjwrqeljhgq'
+    user.save
+
+    identity = Identity.where(:uid => auth[:uid]).first_or_initialize
+
+    # assign identity attributes
+    identity.user = user
+    identity.provider = auth[:provider]
+    identity.uid = auth[:uid]
+    identity.login_name = auth[:info][:nickname]
+    identity.image = auth[:info][:image]
+    identity.atoken = auth[:credentials][:token]
+    identity.oauth_expires_at = Time.at(auth[:credentials][:expires_at])
+    identity.save
+
+    return user
   end
 
 end

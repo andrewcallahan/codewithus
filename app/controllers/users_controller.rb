@@ -55,8 +55,7 @@ class UsersController < ApplicationController
 
   def create_from_facebook
     @user = current_user
-    @user.password_digest = params[:password_digest]
-    @user.save
+    @user.update_attributes(params[:user])
     redirect_to root_url
   end
 
