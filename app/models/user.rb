@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessible :cell, :email, :image, :image_content_type, :image_file_name, :name, :password, :password_confirmation
 
+  has_secure_password
+  validates :password, :presence => { :on => :create }
+
   has_many :participants
   has_many :hackathons, :through => :participants
 
@@ -13,4 +16,5 @@ class User < ActiveRecord::Base
 
   has_many :user_skillcategories
   has_many :skillcategories, :through => :user_skillcategories
+
 end
