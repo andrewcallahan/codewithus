@@ -14,6 +14,8 @@ Codewithus::Application.routes.draw do
   resources :users
   resources :hackathons
   resources :sessions
+  resources :charges
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

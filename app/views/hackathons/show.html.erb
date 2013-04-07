@@ -7,7 +7,6 @@
     <li><%= @hackathon.location %></li>
     <li><%= @hackathon.description %></li>
     <li><%= @hackathon.capacity %></li>
-    <li><%= @hackathon.price %></li>
 </ul>
 
 Participants signed-up:
@@ -16,3 +15,17 @@ Participants signed-up:
     <li><%= user.name %></li>
   <% end %>
 </ul>
+
+
+Pay Up!
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount: $<%= @hackathon.price %>.00</span>
+    </label>
+  </article>
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="<%= @hackathon.name %>"
+          data-amount="<%= @hackathon.price*100 %>"></script>
+<% end %>
