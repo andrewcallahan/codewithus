@@ -49,18 +49,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def new_from_facebook
+    @user = current_user
+  end
+
   def create_from_facebook
-    user = User.from_omniauth(env["omniauth.auth"])
-    redirect #to new route
-    # fill in final details with params from new route
-    # then save
-    session[:user_id] = user.id
+    @user = current_user
+    @user.password_digest = params[:password_digest]
+    @user.save
     redirect_to root_url
   end
 
-  def finish_facebook_auth
+  def facebook_auth
+    user = User.from_facebook_omniauth(env["omniauth.auth"])
+    session[:user_id] = user.id
+    redirect_to finish_account_signup_path
   end
-
-
 
 end

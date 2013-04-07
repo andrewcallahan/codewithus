@@ -5,6 +5,9 @@ Codewithus::Application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
 
+  get 'finish_account_signup' => "users#new_from_facebook"
+  post 'finish_account_signup' => "users#create_from_facebook"
+
   resources :users
   resources :hackathons
   resources :sessions
