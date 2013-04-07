@@ -3,3 +3,24 @@
     <li><%= @user.name %></li>
     <li><%= @user.email %></li>
 </ul>
+
+Skills:
+<ul>
+   <%@user.user_skills.each do |user_skill| %>
+    <li><%= Skill.where(:id => user_skill.skill_id).first.name %> - <%= user_skill.level %> </li>
+  <% end %>
+</ul>
+
+Hackathons:
+
+<ul>
+  <% @user.hackathons.each do |hackathon| %>
+    <li><%= image_tag hackathon.image %></li>
+    <li><%= hackathon.name %></li>
+    <li><%= hackathon.start %></li>
+    <li><%= hackathon.location %></li>
+    <li><%= hackathon.price %></li>
+  <% end %>
+</ul>
+
+
