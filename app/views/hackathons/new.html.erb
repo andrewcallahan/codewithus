@@ -1,3 +1,10 @@
+<script type="text/javascript">
+  $('[data-behaviour~=datepicker]').datepicker()
+</script>
+
+<input type="text" data-behaviour='datepicker' value="<%= Date.today.to_s %>">
+
+
 <%= form_for(@hackathon) do |f| %>
   <% if @hackathon.errors.any? %>
     <div id="error_explanation">
@@ -52,4 +59,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
