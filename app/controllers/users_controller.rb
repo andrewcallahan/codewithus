@@ -55,14 +55,15 @@ class UsersController < ApplicationController
 
   def create_from_facebook
     if @user_exists = User.where(:email => params[:user][:email]).first
-      @user_exists.copy_identity(current_user)
+      @user_exists.copy_identity_data(current_user)
       current_user.delete
       session[:user_id] = @user_exists.id
       @user_exists.update_attributes(params[:user])
     else
       @user = current_user
       @user.update_attributes(params[:user])
-    redirect_to root_url
+      redirect_to root_url
+    end
   end
 
   def facebook_auth
