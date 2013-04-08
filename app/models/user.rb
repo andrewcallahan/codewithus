@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     user = User.where(:email => auth[:info][:email]).first_or_initialize
     
     # create user with default password
-    user.password_digest = 'dbjwrqeljhgq'
+    user.password_digest = '$2a$10$hES1PybNlFkaGCh4ZlmlBOeRgJnnwQ3qLHuKbziZeO1/1XIpHTc5O'
     user.save
 
     identity = Identity.where(:uid => auth[:uid]).first_or_initialize
