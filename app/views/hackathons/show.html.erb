@@ -16,6 +16,11 @@ Participants signed-up:
   <% end %>
 </ul>
 
+<%= form_for(@participant) do |f| %>
+  <%= f.hidden_field :hackathon_id, :value => params[:id] %>
+  <%= f.submit "Join Hackathon!" %>
+<% end %>
+
 
 Pay Up!
 <%= form_tag charges_path do %>

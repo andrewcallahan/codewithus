@@ -12,9 +12,10 @@ class HackathonsController < ApplicationController
   # GET /users/1.json
   def show
     @hackathon = Hackathon.find(params[:id])
+    @participant= @hackathon.participants.build(:user_id => current_user.id)
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @user }
+      format.json { render json: @hackathon }
     end
   end
 
