@@ -17,3 +17,5 @@
 /public/system
 
 /config/passwords.yml
+# Ignore application configuration
+/config/application.yml
