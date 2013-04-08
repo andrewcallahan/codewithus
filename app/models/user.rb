@@ -47,4 +47,16 @@ class User < ActiveRecord::Base
     self.identities.present?
   end
 
+  def copy_identity
+    identity.user = user
+    identity.provider = auth[:provider]
+    identity.uid = auth[:uid]
+    identity.login_name = auth[:info][:nickname]
+    identity.image = auth[:info][:image]
+    identity.atoken = auth[:credentials][:token]
+    identity.oauth_expires_at = Time.at(auth[:credentials][:expires_at])
+    identity.save
+
+  end
+
 end

@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:user][:email] %>
-  </div>
-  <div class="field">
     <%= label_tag :password %><br />
-    <%= password_field_tag :password, params[:user][:password] %>
+    <%= password_field :user, :password %>
   </div>
   <div class="field">
     <%= label_tag :password_confirmation %><br />
-    <%= password_field_tag :password_confirmation, params[:user][:password_confirmation] %>
+    <%= password_field :user, :password_confirmation %>
   </div>
   <div class="actions">
     <%= submit_tag("Create Account") %>
