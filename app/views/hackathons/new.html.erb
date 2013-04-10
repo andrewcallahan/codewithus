@@ -1,9 +1,5 @@
-<script type="text/javascript">
-  $('[data-behaviour~=datepicker]').datepicker()
-</script>
-
-<input type="text" data-behaviour='datepicker' value="<%= Date.today.to_s %>">
-
+<!-- <input type="text" id='datepicker' value="<%#= Date.today.to_s %>">
+ -->
 
 <%= form_for(@hackathon) do |f| %>
   <% if @hackathon.errors.any? %>
@@ -28,12 +24,12 @@
   </div>
 
   <div class="field">
-    <%#= f.label :start %><br />
-    <%#= f.datetime_select :start, :ampm => true, :minute_step => 15 %>
+    <%= f.label :start %><br />
+    <%= f.datetime_select :start, :ampm => true, :minute_step => 15 %>
   </div>
   <div class="field">
-    <%#= f.label :end %><br />
-    <%#= f.datetime_select :end, :ampm => true, :minute_step => 15 %>
+    <%= f.label :end %><br />
+    <%= f.datetime_select :end, :ampm => true, :minute_step => 15 %>
   </div>
 
   <div class="field">
