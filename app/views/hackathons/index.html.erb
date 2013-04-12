@@ -1,4 +1,16 @@
 <section>
+  <%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :location, "Location" %>
+    <%= f.text_field :location_cont %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Search" %>
+  </div>
+<% end %>
+</section>
+
+<section>
 
   <% @hackathons.each do |hackathon|  %>
     <div class="span7 hackathon">

@@ -5,7 +5,8 @@ class HackathonsController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @hackathons = Hackathon.order("start ASC")
+    @search = Hackathon.search(params[:q])
+    @hackathons = @search.result.order("start DESC")
   end
 
   # GET /users/1
