@@ -1,0 +1,37 @@
+<h2>Add skills!</h2>
+
+<%= form_for(@user_skillcategory, :url => user_user_skillcategories_path) do |f| %>
+  <% if @user_skillcategory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_skillcategory.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user_skillcategory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label>Design</label>
+    <input type="range" min="1" max="3" name='user_skillcategory[Design]'>
+    <output id="output" for="user_skillcategory[Design]">1</output>
+  <div>
+
+  <div class="field">
+    <label>Frontend</label>
+    <input type="range" min="1" max="3" name='user_skillcategory[Front End]'>
+    <output id="output" for="user_skillcategory[Frontend]">1</output>
+  <div>
+
+  <div class="field">
+    <label>Backend</label>
+    <input type="range" min="1" max="3" name='user_skillcategory[Back End]'>
+    <output id="output" for="user_skillcategory[Backend]">1</output>
+  <div>
+
+  <div class="actions">
+    <%= f.submit 'Add Skills' %>
+  </div>
+<% end %>
