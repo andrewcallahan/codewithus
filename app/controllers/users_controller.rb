@@ -25,12 +25,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
 
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @user }
-      end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user }
+    end
   end
 
   def new
@@ -49,28 +49,16 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to user_path(@user), notice: 'User was successfully created and logged in' }
+        format.html { redirect_to new_user_user_skillcategory_path(@user), notice: 'Now add your skills!' }
         format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: "Your stars are traveling through space to get here. Refresh your page in a few seconds!" }
-        format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
+
+  s
 
   def new_from_facebook
     @user = current_user
