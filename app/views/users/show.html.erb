@@ -11,8 +11,8 @@
 
 Skills:
 <ul>
-   <%@user.user_skills.each do |user_skill| %>
-    <li><%= Skill.where(:id => user_skill.skill_id).first.name %> - <%= user_skill.level %> </li>
+   <%@user.user_skillcategories.each do |skill| %>
+    <li><%= Skillcategory.where(:id => skill.skillcategory_id).first.name %> - <%= skill.level %> </li>
   <% end %>
 </ul>
 
