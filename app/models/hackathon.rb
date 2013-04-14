@@ -3,6 +3,7 @@ class Hackathon < ActiveRecord::Base
 
   has_many :participants
   has_many :users, :through => :participants
+  has_many :teams
 
   has_attached_file :image, :default_url => "avatar.jpg"
   validates_attachment_presence :image unless :image

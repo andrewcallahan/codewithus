@@ -1,5 +1,8 @@
 Codewithus::Application.routes.draw do
 
+  resources :teams
+
+
   get 'signup'=> 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
