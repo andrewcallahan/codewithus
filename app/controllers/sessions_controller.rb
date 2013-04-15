@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   skip_before_filter :login_required, :except => "destroy"
 
   def new
+    @hackathons = Hackathon.all
+    render :layout => 'landing_page'
   end
 
   def create

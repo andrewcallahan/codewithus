@@ -1,16 +1,19 @@
-<h1>Login</h1>
+<div id="landing" class="row-fluid">
+  <div id="cover_content" class="login-box" class="span4">
+    <div id="login">
+      <h2>Good code.<br>Better company.</h2>
 
-<%= form_tag sessions_path do |f| %>
+      <hr> 
+      
+      <%= render :partial => "login_button" %>
+      <%= render :partial => "email_login" %>
 
-  <%= label_tag :email %>
-  <%= text_field_tag :email %><br />
+    </div>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %><br />
+  </div>
 
-  <%= submit_tag "Login" %>
-<% end %>
+  <div class="hackathon_landing">
+    <%= render :partial => "/hackathons/hackathons_index", :locals => {:hackathons => @hackathons} %>
+  </div>
 
-Or create a new account from facebook:
-
-<%= link_to "Facebook sign-up", "/auth/facebook" %>
+</div>

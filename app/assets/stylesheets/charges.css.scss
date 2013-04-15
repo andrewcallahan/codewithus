@@ -1,3 +1,131 @@
 // Place all the styles related to the charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#landing_page {
+  background: url('hackathon_flatiron.png') no-repeat center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  margin-top: -1em;
+  height: 420px;
+}
+
+#about {
+  position: relative;
+  float: right;
+  margin-top: 2em;
+  padding-right: 2em;
+
+  h1 {
+    font-size: 5em;
+    font-family: monaco;
+    line-height: 1em;
+    padding-left: 0em;
+  }
+
+  h3 {
+    line-height: 1.5em;
+    padding-left: 0em;
+  }
+
+}
+
+#built {
+  p {
+    text-align: center;
+  }
+}
+
+#landing {
+  height: 70em;
+  text-align: center;
+  /*width: image-width(url('handraise.jpg'));*/
+}
+
+#login {
+  padding: 0.5em 2em;
+  z-index: 1000;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  color: white;
+}
+
+.input-large {
+  background-color: white !important;
+  z-index: 1000;
+}
+
+.login-section {
+  text-align: left;
+}
+
+.login-box {
+  background: rgba(20, 129, 164, 0.95) !important;
+  width: 320px;
+  height: 270px;
+  margin: 75px auto;
+  border-radius: 10px;
+
+  .input-prepend {
+    text-align: left !important;
+    background: rgba(255, 255, 255, 0) !important;
+    padding-top: 0px !important;
+  }
+
+  i {
+    color: rgba(20, 129, 164, 0.85);
+  }
+
+  label {
+    font-weight: bold;
+    line-height: 0px;
+  }
+
+  p {
+    margin-left: 0px !important;
+  }
+
+  hr {
+    border-top: 0px;
+    border-bottom: solid   1px #bbb;
+  }
+
+}
+
+.button-login {
+  margin-right: 0 !important;
+  margin-top: 5px;
+  margin-left: 30px;
+  margin-top: 10px;
+  text-align: left;
+
+  button {
+    width: 190px;
+  }
+
+}
+
+.black_font {
+  color: #000 !important;
+}
+
+.hackathon_landing {
+  margin-top: 100px;
+}
+
+.hackathon {
+  margin: 0 auto;
+}
+
+.sign-in-ajax button {
+  margin-right: 5px;
+}
+
+#email_field {
+  margin-bottom: 5px;
+}
+
+#login-button {
+  margin-right: 20px;
+}
