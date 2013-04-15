@@ -4,19 +4,11 @@
       <h2>Good code.<br>Better company.</h2>
 
       <hr> 
-
-      <h3>Sign in with: </h3>
-
-      <%#= render :partial => "email_login" %>
-      <div class="btn-group">
-        <a href=""><button class="btn btn-large">Email</button></a>
-        <a href=""><button class="btn btn-large">Github</button></a>
-      </div>
+      
+      <%= render :partial => "login_button" %>
+      <%= render :partial => "email_login" %>
 
     </div>
-    <!-- <div id="about" class="span7"> -->
-      <%#= render :partial => "/layouts/about" %>
-    <!-- </div> -->
 
   </div>
 

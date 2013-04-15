@@ -165,6 +165,7 @@ time {
   width: 122.1875px;
   z-index: 100;
   zoom: 1;
+  border-radius: 10px;
 }
 
 .view-blue-block {
