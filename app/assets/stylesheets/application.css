@@ -198,6 +198,7 @@ time {
   width: 122.1875px;
   z-index: 100;
   zoom: 1;
+  border-radius: 10px;
 }
 
 .view-blue-block {
@@ -293,6 +294,6 @@ section {
   padding-right: 140px;
   padding-top: 0px;
   position: relative;
-  width: 616px;
+  width: 510px;
   zoom: 1;
 }

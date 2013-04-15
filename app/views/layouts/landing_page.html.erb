@@ -1,10 +1,11 @@
 <%= render 'layouts/header' %>
 
-  <div class="container-fluid">
+  <div class="container-fluid" id="landing_page">
 
     <div class="row-fluid">
 
-      <div class="container">
+      <div class="span12">
+        <%= bootstrap_flash %>
         <%= yield %>
       </div>
 

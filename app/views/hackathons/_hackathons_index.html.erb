@@ -1,0 +1,23 @@
+<% hackathons.each do |hackathon|  %>
+  <div class="hackathon">
+    <div>
+      <h1><%= link_to hackathon.name, hackathon %></h1>
+      <time><%= link_to hackathon.start.to_formatted_s(:long), hackathon, class: "time-blue-block" %><time>
+      <a href="<%= hackathon_path(hackathon) %>" class="hackathon-image">
+        <img src="<%= hackathon.image %>">
+      </a>
+    </div>
+    <div>
+      <p class="location">
+        <%= hackathon.location %>
+      </p>
+      <p class="count">
+        <%= hackathon.users.count %> attending
+      </p>
+    </div>
+    <div>
+      <a href="<%= hackathon_path(hackathon) %>" class="view-blue-block">Join Hackathon
+      </a>
+    </div>  
+  </div>
+<% end %>

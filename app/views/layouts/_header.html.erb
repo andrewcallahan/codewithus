@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codewithus</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="navbar navbar-static-top">
+    <div class="navbar inner wrapper">
+      <div class="container">
+        <ul class="nav nav-wrapper">
+          <li class="active divider-vertical">
+            <%= link_to "codewithus", root_path%>
+          </li>
+          <li class="divider-vertical"><%= link_to "hackathons", hackathons_path %></li>
+          <li class="divider-vertical"><%= link_to "add hackathon", new_hackathon_path, class: "pull-right" %></li>
+          <% if current_user %>
+          <li class="divider-vertical"><%= link_to "profile", current_user, class: "pull-right" %></li>
+          <% else %>
+            <li class="divider-vertical"><%= link_to "sign-up", signup_path, class: "pull-right" %></li>
+            <li class="divider-vertical"><%= link_to "login", login_path, class: "pull-right" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
