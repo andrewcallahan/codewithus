@@ -1,5 +1,13 @@
 source 'http://rubygems.org'
 
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
 gem 'rails', '3.2.12'
 
 gem 'ransack'
@@ -8,7 +16,6 @@ gem 'ransack'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'jquery-rails'
-gem 'sqlite3'
 gem 'omniauth-facebook'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
