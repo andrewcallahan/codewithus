@@ -10,6 +10,7 @@
 </ul>
 
 <%= pluralize(@hackathon.teams.size, 'team') %> signed-up:
+
 <ul>
   <% @hackathon.teams.each do |team| %>
     <li><%= team.name %></li>
@@ -21,12 +22,13 @@
   <% end %>
 </ul>
 
+
 <%= form_for(@participant) do |f| %>
   <%= f.hidden_field :hackathon_id, :value => params[:id] %>
   <%= f.submit "Create Team", class: 'btn' %>
 <% end %>
 
-<% unless @hackathon.teams %>
+<% unless @hackathon.teams.empty? %>
   <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn'>Join Existing Team</a>
 <% end %>
 
