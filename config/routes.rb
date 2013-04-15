@@ -16,7 +16,10 @@ Codewithus::Application.routes.draw do
     resources :user_skillcategories 
   end
 
-  resources :hackathons
+  resources :hackathons do
+    resources :teams
+    resources :teammates
+  end
   resources :sessions
   resources :charges
   resources :participants

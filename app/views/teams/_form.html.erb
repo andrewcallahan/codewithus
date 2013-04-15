@@ -1,0 +1,27 @@
+<%= form_for(@team, :url => hackathon_teams_path) do |f| %>
+  <% if @team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+      <ul>
+      <% @team.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Team Name" %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <!-- <div class="field">
+    <%#= f.label "What other type of people with the following skills would you like to have join your team?" %><br />
+    <%#= f.text_field :email %>
+  </div> -->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
