@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #landing_page {
-  background: url('hackathon_flatiron.png') no-repeat center center fixed !important;
+  background: url('hackathon_flatiron.png') no-repeat center center !important;
   background-size: cover !important;
   background-repeat: no-repeat;
   margin-top: -1em;
@@ -43,10 +43,12 @@
 }
 
 #login {
-  padding: 1em 2em;
+  padding: 0.5em 2em;
   z-index: 1000;
   width: 250px;
   height: 250px;
+  margin: 0 auto;
+  color: white;
 }
 
 .input-large {
@@ -59,15 +61,20 @@
 }
 
 .login-box {
-  background: rgba(255, 255, 255, 0.75) !important;
+  background: rgba(20, 129, 164, 0.95) !important;
   width: 320px;
-  height: 300px;
-  margin: 40px 20px;
+  height: 270px;
+  margin: 75px auto;
+  border-radius: 10px;
 
   .input-prepend {
     text-align: left !important;
     background: rgba(255, 255, 255, 0) !important;
-    padding-top: 10px !important;
+    padding-top: 0px !important;
+  }
+
+  i {
+    color: rgba(20, 129, 164, 0.85);
   }
 
   label {
@@ -108,5 +115,17 @@
 }
 
 .hackathon {
-  width: 510px;
+  margin: 0 auto;
+}
+
+.sign-in-ajax button {
+  margin-right: 5px;
+}
+
+#email_field {
+  margin-bottom: 5px;
+}
+
+#login-button {
+  margin-right: 20px;
 }
