@@ -1,0 +1,23 @@
+<%= form_for(@teammate, :url => hackathon_teammates_path) do |f| %>
+  <% if @teammate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@teammate.errors.count, "error") %> prohibited this teammate from being saved:</h2>
+
+      <ul>
+      <% @teammate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Which team would you like to join?" %>
+    <%=  select_tag 'id', options_for_select(@teams.collect{ |t| [t.name, t.id] }) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

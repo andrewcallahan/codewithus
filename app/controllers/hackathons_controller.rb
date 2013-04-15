@@ -13,6 +13,7 @@ class HackathonsController < ApplicationController
   # GET /users/1.json
   def show
     @hackathon = Hackathon.find(params[:id])
+    @teammate = Teammate.new
     @participant= @hackathon.participants.build(:user_id => current_user.id)
     respond_to do |format|
       format.html # show.html.erb

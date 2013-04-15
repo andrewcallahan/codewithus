@@ -8,7 +8,7 @@ class ParticipantsController < ApplicationController
 
      respond_to do |format|
        if @participant.save
-         format.html { redirect_to @hackathon, notice: "You've joined the hackathon!" }
+         format.html { redirect_to new_hackathon_team_path(@hackathon), notice: "You've joined the hackathon!" }
          format.json { render json: @participant, status: :created, location: @hackathon }
        else
          format.html { render action: "new" }

@@ -9,20 +9,31 @@
     <li><%= @hackathon.capacity %></li>
 </ul>
 
-Participants signed-up:
+<%= pluralize(@hackathon.teams.size, 'team') %> signed-up:
+
 <ul>
-  <% @hackathon.users.each do |user| %>
-    <li><%= user.name %></li>
+  <% @hackathon.teams.each do |team| %>
+    <li><%= team.name %></li>
+      <ul>
+        <% team.users.each do |user| %>
+          <li><%= link_to user.name, user %></li>
+        <% end %>
+      </ul>
   <% end %>
 </ul>
 
+
 <%= form_for(@participant) do |f| %>
   <%= f.hidden_field :hackathon_id, :value => params[:id] %>
-  <%= f.submit "Join Hackathon!" %>
+  <%= f.submit "Create Team", class: 'btn' %>
+<% end %>
+
+<% unless @hackathon.teams.empty? %>
+  <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn'>Join Existing Team</a>
 <% end %>
 
 
-Pay Up!
+<h4>Pay Up!</h4>
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
