@@ -1,0 +1,21 @@
+<h1>Listing teammates</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teammates.each do |teammate| %>
+  <tr>
+    <td><%= link_to 'Show', teammate %></td>
+    <td><%= link_to 'Edit', edit_teammate_path(teammate) %></td>
+    <td><%= link_to 'Destroy', teammate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Teammate', new_teammate_path %>
