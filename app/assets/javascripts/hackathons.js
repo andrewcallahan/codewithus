@@ -7,7 +7,13 @@ $('document').ready(function(){
     })
   });
 
+  $('#add_teammate').click(function(){
+    event.preventDefault();
+    $('.teammate:last').after($('.teammate:first').clone());
+    // $('.teammate:last').remove();
 
+    // $('.teammate').after()
+  })
 
 });
 

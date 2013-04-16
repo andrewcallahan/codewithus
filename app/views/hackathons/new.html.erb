@@ -29,7 +29,20 @@
     <div id="content">
 
     <%= render :partial => "new_logistics", :locals => { :f => f } %>
-    
+    <br>
+    <%= fields_for @team do |t| %>
+      <%= t.label :name %>
+      <%= t.text_field :name %>
+      <%= t.label "Teammates" %>
+      <div class="teammate">
+        <select name="team[teammates][]">
+        <%= options_from_collection_for_select(User.all, :id, :name) %>
+        </select>
+        <br>
+      </div>
+      <button id="add_teammate">Add a Teammate</button>
+    <% end %>
+
     </div>
 
     <div class="actions">
