@@ -4,6 +4,15 @@ class HackathonsController < ApplicationController
 
   # GET /users
   # GET /users.json
+
+  def skills_needed
+    render :partial => "new_hackathon_team"
+  end
+
+  def logistics
+    render :partial => "new_logistics"
+  end
+
   def index
     @search = Hackathon.search(params[:q])
     @hackathons = @search.result.order("start DESC")

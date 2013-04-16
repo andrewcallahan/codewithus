@@ -1,0 +1,21 @@
+#new_hackathon_container {
+/*  background-image: url('tag-cloud-hackathon.png');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;*/
+}
+
+#new_hackathon_nav {
+  list-style: none;
+  margin: 0 auto;
+
+  li {
+    display: inline;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: 1em;
+    border: solid;
+  }
+}

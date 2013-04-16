@@ -1,8 +1,33 @@
+<<<<<<< HEAD
 <%= render 'layouts/header' %>
 
   <div class="container-fluid">
 
     <div class="row-fluid">
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codewithus</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<script>
+// $(document).ready(function(){
+//   $('.divider-vertical').click(function(e){
+//     if(!$(this).hasClass('active')){
+//       $(this).addClass('active');
+//     };
+//   });
+// });
+</script>
+
+  <div class="navbar navbar-static-top">
+    <div class="navbar inner wrapper">
 
       <div class="container">
         <%= yield %>

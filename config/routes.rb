@@ -4,6 +4,7 @@ Codewithus::Application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
+  get 'skills_needed' => 'hackathons#skills_needed'
 
   get 'finish_account_signup' => "users#new_from_facebook"
   post 'finish_account_signup' => "users#create_from_facebook", :as => "finish_account_signup"
