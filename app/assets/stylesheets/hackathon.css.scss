@@ -1,3 +1,4 @@
+
 #new_hackathon_container {
 /*  background-image: url('tag-cloud-hackathon.png');
   background-size: 90%;
@@ -18,4 +19,33 @@
     margin-right: 1em;
     border: solid;
   }
+
+.dummy-content {
+	border: 1px solid #000;
+	padding: 10px;
+	height: 250px;
+	overflow: hidden;
+}
+
+.header-content {
+	border: 1px solid #000;
+	padding: 10px;
+	height: 250px;
+	overflow: hidden;
+}
+
+.subheader-content {
+	border: 1px solid #000;
+	padding: 10px;
+	height: 200px;
+	h3 {
+		padding: 4px;
+	}
+}
+
+.team-content {
+	border: 1px solid #000;
+	padding: 10px;
+	height: 150px;
+	overflow: hidden;
 }
