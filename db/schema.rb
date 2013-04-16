@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414223312) do
+ActiveRecord::Schema.define(:version => 20130416232119) do
 
   create_table "hackathons", :force => true do |t|
     t.string   "name"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20130414223312) do
     t.integer  "hackathon_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "project"
   end
 
   create_table "user_skillcategories", :force => true do |t|

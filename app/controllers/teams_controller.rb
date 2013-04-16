@@ -40,10 +40,11 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
-    @team = Team.new(params[:team])
+    @team = Team.new(:name => params[:team][:name])
     hackathon = Hackathon.find(params[:hackathon_id])
     @team.hackathon_id = hackathon.id
     @team.creator_id = current_user.id
+    @team.project = params[:team][:project] unless params[:team][:project] = ""
 
     respond_to do |format|
       if @team.save

@@ -1,5 +1,5 @@
 class Team < ActiveRecord::Base
-  attr_accessible :name, :creator_id, :hackathon_id
+  attr_accessible :name, :creator_id, :hackathon_id, :project
 
   belongs_to :hackathon
   has_many :teammates 
