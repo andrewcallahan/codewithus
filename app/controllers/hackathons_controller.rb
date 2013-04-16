@@ -5,9 +5,9 @@ class HackathonsController < ApplicationController
   # GET /users
   # GET /users.json
 
-  def skills_needed
-    render :partial => "new_hackathon_team"
-  end
+  # def skills_needed
+  #   render :partial => "new_hackathon_team"
+  # end
 
   def logistics
     render :partial => "new_logistics"
