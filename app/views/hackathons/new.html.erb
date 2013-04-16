@@ -1,59 +1,53 @@
-<input type='text' id='datepicker' value="<%= Date.today.to_s %>">
+<div id="new_hackathon_container">
+  <ul id="new_hackathon_nav">
+    <li>
+      <%= link_to "Logistics", "#", :controller => "hackathons", :action => "skills_needed", :id => "logistics" %>
+    </li>
+    <li>
+      <%= link_to "Skills", "#", :controller => "hackathons", :action => "skills_needed", :id => "skills_needed" %>
+    </li>
+    <li>
+      <%= link_to "Friends", "#", :controller => "hackathons", :action => "skills_needed", :id => "friends" %>
+    </li>
+  </ul>
+  <br><br>
+  <input type='text' id='datepicker' value="<%= Date.today.to_s %>">
 
+  <%= form_for(@hackathon) do |f| %>
+    <% if @hackathon.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@hackathon.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-<%= form_for(@hackathon) do |f| %>
-  <% if @hackathon.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@hackathon.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+        <% @hackathon.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% @hackathon.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div id="content">
+
+    <%= render :partial => "new_logistics", :locals => { :f => f } %>
+    <br>
+    <%= fields_for @team do |t| %>
+      <%= t.label :name %>
+      <%= t.text_field :name %>
+      <%= t.label "Teammates" %>
+      <div class="teammate">
+        <select name="team[teammates][]">
+        <%= options_from_collection_for_select(User.all, :id, :name) %>
+        </select>
+        <br>
+      </div>
+      <button id="add_teammate">Add a Teammate</button>
+    <% end %>
+
     </div>
+    <br>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= f.label :start %><br />
-    <%= f.datetime_select :start, :ampm => true, :minute_step => 15 %>
-  </div>
-  <div class="field">
-    <%= f.label :end %><br />
-    <%= f.datetime_select :end, :ampm => true, :minute_step => 15 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :capacity %><br />
-    <%= f.number_field :capacity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.number_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Upload_a_photo %><br />
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>
+</div>

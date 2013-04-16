@@ -1,0 +1,38 @@
+<div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :location %><br />
+  <%= f.text_field :location %>
+</div>
+
+<div class="field">
+  <%= f.label :start %><br />
+  <%= f.datetime_select :start, :ampm => true, :minute_step => 15 %>
+</div>
+
+<div class="field">
+  <%= f.label :end %><br />
+  <%= f.datetime_select :end, :ampm => true, :minute_step => 15 %>
+</div>
+
+<div class="field">
+  <%= f.label :description %><br />
+  <%= f.text_field :description %>
+</div>
+
+<div class="field">
+  <%= f.label :capacity %><br />
+  <%= f.number_field :capacity %>
+</div>
+
+<div class="field">
+  <%= f.label :price %><br />
+  <%= f.number_field :price %>
+</div>
+
+<div class="field">
+  <%= f.label :Upload_a_photo %><br />
+  <%= f.file_field :image %>
+</div>

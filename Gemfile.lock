@@ -73,6 +73,7 @@ GEM
     figaro (0.6.3)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    geocoder (1.1.6)
     hashie (1.2.0)
     highline (1.6.16)
     hike (1.2.1)
@@ -197,6 +198,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
   figaro
+  geocoder
   jquery-rails
   omniauth-facebook
   paperclip
