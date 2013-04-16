@@ -1,47 +1,73 @@
-<div><%= image_tag @hackathon.image %></div>
+<section>
+  <div class="row-fluid">
+    <div class="span7 header-content">
+      <%= image_tag @hackathon.image %>
 
-<ul>
-    <li><%= @hackathon.name %></li>
-    <li><%= @hackathon.start %></li>
-    <li><%= @hackathon.end %></li>
-    <li><%= @hackathon.location %></li>
-    <li><%= @hackathon.description %></li>
-    <li><%= @hackathon.capacity %></li>
-</ul>
+      <%= pluralize(@hackathon.teams.size, 'team') %> signed-up:
 
-<%= pluralize(@hackathon.teams.size, 'team') %> signed-up:
+    </div>
+    <div class="span5 dummy-content">
+      <%= image_tag 'map_placeholder.png', :style => 'overflow:hidden;' %>
+    </div>
+  </div>
 
-<ul>
-  <% @hackathon.teams.each do |team| %>
-    <li><%= team.name %></li>
-      <ul>
-        <% team.users.each do |user| %>
-          <li><%= link_to user.name, user %></li>
+  <div class="row-fluid">
+
+    <div class="span8 subheader-content">
+     
+       <h3><%= @hackathon.name %></h3>
+       <%= @hackathon.start %><br>
+       <%= @hackathon.end %><br>
+       <%= @hackathon.location %><br>
+       <%= @hackathon.description %><br>
+       <%= @hackathon.capacity %><br>
+      
+    </div>
+    <div class="span4 subheader-content">
+      <%= form_for(@participant) do |f| %>
+        <%= f.hidden_field :hackathon_id, :value => params[:id] %>
+        <%= f.submit "Create Team", class: 'btn' %>
+      <% end %>
+      lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumipsumlorem ipsumlorem ipsumlorem ipsum
+    </div>
+  </div>
+
+</section>
+
+<div class="clearfix"></div>
+
+<section>
+
+  <div class="row-fluid">
+  
+    <% @hackathon.teams.each do |team| %>
+      <div class="span4 team-content">
+        <h4>
+          <%= team.name %>
+        </h4>
+
+        <% unless @hackathon.teams.empty? %>
+          <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn'>Join Existing Team</a>
         <% end %>
-      </ul>
-  <% end %>
-</ul>
+      </div>
+      <!-- for ever three team, put clearfix div -->
 
+    <% end %>
+  </div>
 
-<%= form_for(@participant) do |f| %>
-  <%= f.hidden_field :hackathon_id, :value => params[:id] %>
-  <%= f.submit "Create Team", class: 'btn' %>
-<% end %>
-
-<% unless @hackathon.teams.empty? %>
-  <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn'>Join Existing Team</a>
-<% end %>
+</section>
+<!-- 
 
 
 <h4>Pay Up!</h4>
-<%= form_tag charges_path do %>
+<#%= form_tag charges_path do %>
   <article>
     <label class="amount">
-      <span>Amount: $<%= @hackathon.price %>.00</span>
+      <span>Amount: $<#%= @hackathon.price %>.00</span>
     </label>
   </article>
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="<%= @hackathon.name %>"
-          data-amount="<%= @hackathon.price*100 %>"></script>
-<% end %>
+          data-key="<#%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="<#%= @hackathon.name %>"
+          data-amount="<#%= @hackathon.price*100 %>"></script>
+<#% end %> -->
