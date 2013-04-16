@@ -4,6 +4,15 @@ class HackathonsController < ApplicationController
 
   # GET /users
   # GET /users.json
+
+  # def skills_needed
+  #   render :partial => "new_hackathon_team"
+  # end
+
+  def logistics
+    render :partial => "new_logistics"
+  end
+
   def index
     @search = Hackathon.search(params[:q])
     @hackathons = @search.result.order("start DESC")
@@ -23,6 +32,7 @@ class HackathonsController < ApplicationController
 
   def new
     @hackathon = Hackathon.new
+    @team = @hackathon.teams.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +47,13 @@ class HackathonsController < ApplicationController
 
   def create
     @hackathon = Hackathon.new(params[:hackathon])
+    @team = @hackathon.teams.build(:name => params[:team][:name])
+    params[:team][:teammates].each do |teammate_id|
+      unless @team.teammates.any? { |teammate| teammate.id == teammate_id }
+        user = User.find(teammate_id)
+        @team.teammates.build(:user_id => user.id)
+      end
+    end
 
     respond_to do |format|
       if @hackathon.save

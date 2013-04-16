@@ -5,8 +5,12 @@ class Hackathon < ActiveRecord::Base
   has_many :users, :through => :participants
   has_many :teams
 
+  accepts_nested_attributes_for :teams
+
   has_attached_file :image, :default_url => "avatar.jpg"
   validates_attachment_presence :image unless :image
   validates_attachment_content_type :image, :content_type => ['image/jpg', 'image/jpeg', 'image/png']
+
+
 
 end
