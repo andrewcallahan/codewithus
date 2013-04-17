@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'thin'
+
 group :production do
   gem 'pg'
 end
