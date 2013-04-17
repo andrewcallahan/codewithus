@@ -48,9 +48,9 @@
           <%= team.name %>
         </h3>
         <ul>
-          <li>Superman</li>
-          <li>Batman</li>
-          <li>Penguin</li>
+          <% team.teammates.each do |user| %>
+          <li><%= link_to(User.find(user.user_id).name, "/users/#{user.user_id}") %></li>
+          <% end %>
         </ul>
         <% unless @hackathon.teams.empty? %>
           <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn btn-info'>JOIN</a>

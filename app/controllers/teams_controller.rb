@@ -25,6 +25,7 @@ class TeamsController < ApplicationController
   # GET /teams/new.json
   def new
     @team = Team.new
+    @potential_teammates = User.all.delete_if { |user| user.id == current_user.id}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,7 +46,9 @@ class TeamsController < ApplicationController
     @team.hackathon_id = hackathon.id
     @team.creator_id = current_user.id
     @team.project = params[:team][:project] unless params[:team][:project] = ""
-
+    params[:teammates].each do |user_id|
+      new_teammate = @team.teammates.build(:user_id => user_id)
+    end
     respond_to do |format|
       if @team.save
         @team.teammates.create(:user_id => current_user.id, :team_id => @team.id)
