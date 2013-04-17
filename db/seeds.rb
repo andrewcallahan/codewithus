@@ -19,6 +19,30 @@ User.create(name: "Anthony", email: "anthony.wijnen@flatironschool.com", passwor
   u = User.last
   u.image = File.open('db/seed_images/anthony_crop.jpg')
   u.save!
+User.create(name: "Eugene", email: "eugene.wang@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
+  u = User.last
+  u.image = File.open('db/seed_images/missing.png')
+  u.save!
+User.create(name: "Erin", email: "erin.lee@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
+  u = User.last
+  u.image = File.open('db/seed_images/missing.png')
+  u.save!
+User.create(name: "Jane", email: "jane.vora@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
+  u = User.last
+  u.image = File.open('db/seed_images/missing.png')
+  u.save!
+User.create(name: "Eilene", email: "eilene.heng@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
+  u = User.last
+  u.image = File.open('db/seed_images/missing.png')
+  u.save!
+User.create(name: "Jesse", email: "jesse.larusso@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
+  u = User.last
+  u.image = File.open('db/seed_images/missing.png')
+  u.save!
+User.create(name: "Cho", email: "cho.kim@flatironschool.com", password: "flatiron", password_confirmation: "flatiron")
+  u = User.last
+  u.image = File.open('db/seed_images/missing.png')
+  u.save!
 
 puts "Users Created"
 
@@ -66,6 +90,18 @@ UserSkill.create(user_id: 1, skill_id: 6, level: 1)
 UserSkill.create(user_id: 1, skill_id: 7, level: 2)
 UserSkill.create(user_id: 1, skill_id: 8, level: 2)
 UserSkill.create(user_id: 1, skill_id: 9, level: 1)
+
+UserSkill.create(user_id: 2, skill_id: 1, level: 1)
+UserSkill.create(user_id: 2, skill_id: 2, level: 2)
+UserSkill.create(user_id: 2, skill_id: 3, level: 2)
+
+UserSkill.create(user_id: 2, skill_id: 4, level: 3)
+UserSkill.create(user_id: 2, skill_id: 5, level: 3)
+UserSkill.create(user_id: 2, skill_id: 6, level: 2)
+
+UserSkill.create(user_id: 2, skill_id: 7, level: 1)
+UserSkill.create(user_id: 2, skill_id: 8, level: 2)
+UserSkill.create(user_id: 2, skill_id: 9, level: 1)
 
 puts "User_Skills Created"
 

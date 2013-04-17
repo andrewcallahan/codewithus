@@ -17,7 +17,8 @@
           <li class="divider-vertical"><%= link_to "hackathons", hackathons_path %></li>
           <li class="divider-vertical"><%= link_to "add hackathon", new_hackathon_path, class: "pull-right" %></li>
           <% if current_user %>
-          <li class="divider-vertical"><%= link_to "profile", current_user, class: "pull-right" %></li>
+          <li class="divider-vertical"><%= link_to "profile", current_user, class: "pull-right" %></li>          
+          <li class="divider-vertical"><%= link_to "logout", logout_path, class: "pull-right" %></li>
           <% else %>
             <li class="divider-vertical"><%= link_to "sign-up", signup_path, class: "pull-right" %></li>
             <li class="divider-vertical"><%= link_to "login", login_path, class: "pull-right" %></li>
