@@ -283,6 +283,11 @@ section {
   zoom: 1;
 }
 
+.no-space [class*="span"] {
+    margin-left: 0 !important;
+}
+
+
 .hackathon {
   background-color: rgb(250, 250, 250);
   cursor: pointer;
