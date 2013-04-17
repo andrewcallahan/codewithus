@@ -1,28 +1,28 @@
+
 <div id="email-login" class="hide">
-  <%= form_tag sessions_path, :class => "form-horizontal" do |f| %>
+<%= form_tag sessions_path, :class => "form-horizontal" do |f| %>
 
-    <div class="input-prepend">
-      <div id="email_field">
-        <span class="add-on">
-          <i class="icon-user"></i>
-        </span>
-        <%= text_field_tag :email, "type email", :class => "input-large span10", :id=> "login_email" %>
-      </div>
-      <span class="add-on">
-        <i class="icon-lock"></i>
-      </span>
-      <%= password_field_tag :password, "type password", :class => "input-large span10", :id=> "login_password" %>
+  <div class="control-group">
+    <div id="email_field">
+      <%= text_field_tag :email, "", :class => "login-field span12", :id=> "login-name", :placeholder => 'Your Email Address'  %>
+      <label class="login-field-icon fui-man-16" for="login-name"></label>
     </div>
+  </div>
+  <div class="control-group">
+    <%= password_field_tag :password, "", :class => "login-field span12", :id=> "login-pass", :placeholder => 'Password' %>
+    <label class="login-field-icon fui-lock-16" for="login-pass"></label>
+  </div>
 
-    <div class="button-login">
-      <button type="submit" class="btn btn-primary">
-        <i class="icon-off icon-white"></i>
-        Login
-      </button>
-    </div>
-    <a href="/auth/facebook">Sign in with Facebook</a>
+  <div class="button-login">
+    <button type="submit" class="btn btn-primary">
+      <i class="icon-off icon-white"></i>
+      Login
+    </button>
+  </div>
+  <br>
+  <a href="/auth/facebook">Sign in with Facebook</a>
 
-    <div class="clearfix"></div>
+  <div class="clearfix"></div>
 
-  <% end %>
+<% end %>
 </div>

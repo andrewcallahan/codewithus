@@ -10,10 +10,10 @@
     </div>
   </div>
 
-  <div class="row-fluid">
+  <div class="row-fluid no-space">
 
     <div class="span8 subheader-content">
-     
+        <%= image_tag 'calendar.png', :align => "left", :width => '100px', :style => "padding-right: 10px; padding-bottom: 10px; margin-top: 7px;" %>
        <h3><%= @hackathon.name %></h3>
        <strong>Begins: </strong><%= @hackathon.start.to_formatted_s(:long) %><br>
        <strong>Ends: </strong><%= @hackathon.end.to_formatted_s(:long) %><br>
@@ -39,17 +39,23 @@
 
 <section>
 
-  <div class="row-fluid">
+  <div class="row-fluid no-space">
   
     <% @hackathon.teams.each do |team| %>
-      <div class="span4 team-content">
-        <h4>
+      <div class="span3 team-content">
+        <div class="well">
+        <h3 class="tile-title">
           <%= team.name %>
-        </h4>
-
+        </h3>
+        <ul>
+          <li>Superman</li>
+          <li>Batman</li>
+          <li>Penguin</li>
+        </ul>
         <% unless @hackathon.teams.empty? %>
-          <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn'>Join</a>
+          <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn btn-info'>JOIN</a>
         <% end %>
+        </div>
       </div>
       <!-- for ever three team, put clearfix div -->
 

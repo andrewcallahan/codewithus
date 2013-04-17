@@ -13,6 +13,9 @@
  */
 @import "bourbon/bourbon";
 @import "bootstrap_and_overrides";
+@import "landing_page";
 @import "hackathon";
 @import "charges";
-
+@import "base";
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
+@import url("http://fonts.googleapis.com/css?family=Quicksand:300,400,700");
