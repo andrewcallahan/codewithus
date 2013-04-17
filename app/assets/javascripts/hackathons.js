@@ -7,13 +7,22 @@ $('document').ready(function(){
   //   })
   // });
 
-  $('#add_teammate').click(function(){
-    event.preventDefault();
-    $('.teammate:last').after($('.teammate:first').clone());
+  // $('#add_teammate').click(function(){
+  //   event.preventDefault();
+  //   $('.teammate:last').after($('.teammate:first').clone());
     // $('.teammate:last').remove();
 
     // $('.teammate').after()
-  })
+  // })
+
+  // $('.add_teammate').click(function(){
+  //   event.preventDefault();
+    
+  //   $.post('/add_teammate', function(data){
+  //     console.log(data);
+  //     $('.add_teammate').remove();
+  //   })
+  // })
 
 });
 

@@ -55,6 +55,20 @@ class TeammatesController < ApplicationController
     end
   end
 
+  def add_teammate # Ajax post request
+    @team = Team.find(params[:team_id])
+    @team.teammates.build(:user_id => current_user.id)
+    @team.save
+
+    redirect_to hackathon_path(@team.hackathon)
+    # render :text => "hello"
+    # raise params.inspect
+    # respond_to do |f|
+    #   f.js { "teammates/add_teammate"}
+    #   f.html {}
+    # end
+  end
+
   # PUT /teammates/1
   # PUT /teammates/1.json
   def update

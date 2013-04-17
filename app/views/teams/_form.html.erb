@@ -20,6 +20,20 @@
     <%= f.label "Team Project (optional)" %><br />
     <%= f.text_area :project %>
   </div>
+
+  <%= f.label "Add Teammates" %>
+  <select name="teammates[]">
+    <%= options_from_collection_for_select(@potential_teammates, :id, :name) %>
+  </select> 
+  <br>
+  <select name="teammates[]">
+    <%= options_from_collection_for_select(@potential_teammates, :id, :name) %>
+  </select>
+  <br>
+  <select name="teammates[]">
+    <%= options_from_collection_for_select(@potential_teammates, :id, :name) %>
+  </select>
+
   
   <!-- <div class="field">
     <%#= f.label "What other type of people with the following skills would you like to have join your team?" %><br />
