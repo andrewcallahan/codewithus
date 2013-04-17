@@ -1,12 +1,11 @@
 <section>
   <div class="row-fluid">
     <div class="span7 header-content">
-      <%= image_tag @hackathon.image %>
-
-      <%= pluralize(@hackathon.teams.size, 'team') %> signed-up:
-
+      <span class="pull-left">
+        <%= pluralize(@hackathon.teams.size, 'team') %> signed-up
+      </span>
     </div>
-    <div class="span5 dummy-content">
+    <div class="span5 dummy-content" style="margin-left: 0;">
       <%= image_tag 'map_placeholder.png', :style => 'overflow:hidden;' %>
     </div>
   </div>
@@ -16,19 +15,21 @@
     <div class="span8 subheader-content">
      
        <h3><%= @hackathon.name %></h3>
-       <%= @hackathon.start %><br>
-       <%= @hackathon.end %><br>
-       <%= @hackathon.location %><br>
-       <%= @hackathon.description %><br>
-       <%= @hackathon.capacity %><br>
-      
+       <strong>Begins: </strong><%= @hackathon.start.to_formatted_s(:long) %><br>
+       <strong>Ends: </strong><%= @hackathon.end.to_formatted_s(:long) %><br>
+       <strong>Location: </strong><%= @hackathon.location %><br>
+       <strong>Capacity: </strong><%= @hackathon.capacity %><br>
+       <p id="hackathon-description">
+        <%= @hackathon.description %><br>
+       </p>
     </div>
-    <div class="span4 subheader-content">
+
+    <div class="span4 subheader-content text-center">
       <%= form_for(@participant) do |f| %>
         <%= f.hidden_field :hackathon_id, :value => params[:id] %>
-        <%= f.submit "Create Team", class: 'btn' %>
+        <%= f.submit "Create Team", class: 'btn btn-primary btn-large' %>
       <% end %>
-      lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumipsumlorem ipsumlorem ipsumlorem ipsum
+     
     </div>
   </div>
 
@@ -47,7 +48,7 @@
         </h4>
 
         <% unless @hackathon.teams.empty? %>
-          <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn'>Join Existing Team</a>
+          <a href="/hackathons/<%=@hackathon.id%>/teammates/new" class ='btn'>Join</a>
         <% end %>
       </div>
       <!-- for ever three team, put clearfix div -->
