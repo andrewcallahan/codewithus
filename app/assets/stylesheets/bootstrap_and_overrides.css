@@ -1,3 +1,4 @@
+
 /*
   =require twitter-bootstrap-static/bootstrap
 
@@ -8,7 +9,8 @@
 
 /*Another bootstrap theme*/
 
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
+@import "variables";
+
 @font-face {
   font-family: "Flat-UI-Icons-16";
   src: url("../fonts/Flat-UI-Icons-16.eot");
@@ -187,7 +189,7 @@
 
 body {
   color: #34495e;
-  font: 14px/1.231 "Lato", sans-serif; }
+  font: 14px/1.231 $sans-serif; }
 
 a {
   color: #2980B9;
@@ -246,7 +248,10 @@ h6 {
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
   transition: 0.25s;
-  -webkit-backface-visibility: hidden; }
+  -webkit-backface-visibility: hidden; 
+	border-bottom: 3px solid 3px solid #293B4D;
+	}
+
   .btn:hover, .btn:focus {
     background-color: #4e6d8d;
     color: white;
@@ -268,25 +273,29 @@ h6 {
     padding-bottom: 12px;
     padding-top: 13px; }
   .btn.btn-primary {
-    background-color: #1abc9c; }
+    background-color: #1abc9c; 
+    border-bottom: 3px solid #16A085; }
     .btn.btn-primary:hover, .btn.btn-primary:focus {
       background-color: #2fe2bf; }
     .btn.btn-primary:active, .btn.btn-primary.active {
       background-color: #16a085; }
   .btn.btn-info {
-    background-color: #3498db; }
+    background-color: #3498db;
+    border-bottom: 3px solid #34495E; }
     .btn.btn-info:hover, .btn.btn-info:focus {
       background-color: #5dade2; }
     .btn.btn-info:active, .btn.btn-info.active {
       background-color: #2383c4; }
   .btn.btn-danger {
-    background-color: #e74c3c; }
+    background-color: #e74c3c; 
+  	border-bottom: 3px solid #C0392B;}
     .btn.btn-danger:hover, .btn.btn-danger:focus {
       background-color: #ec7063; }
     .btn.btn-danger:active, .btn.btn-danger.active {
       background-color: #dc2d1b; }
   .btn.btn-success {
-    background-color: #2ecc71; }
+    background-color: #2ecc71;
+    border-bottom: 3px solid #27AE60; }
     .btn.btn-success:hover, .btn.btn-success:focus {
       background-color: #55d98d; }
     .btn.btn-success:active, .btn.btn-success.active {
@@ -522,7 +531,7 @@ h6 {
   .demo-browser {
     background-image: url("../images/demo/browser-2x.png"); } }
 .navbar {
-  font-size: 18px; }
+  font-size: 14px; }
   .navbar .brand {
     color: #1abc9c;
     font-size: inherit;
@@ -819,7 +828,7 @@ input[type="color"],
 .uneditable-input {
   border: 2px solid #dce4ec;
   color: #34495e;
-  font-family: "Lato", sans-serif;
+  font-family: $sans-serif;
   font-size: 14px;
   padding: 8px 0 9px 10px;
   text-indent: 1px;
@@ -1284,7 +1293,7 @@ textarea,
     background: transparent;
     border: none;
     color: #34495e;
-    font-family: "Lato", sans-serif;
+    font-family: $sans-serif;
     font-size: 14px;
     margin: 0px;
     padding: 0 0 0 5px;
@@ -1950,7 +1959,7 @@ body.vjs-full-window {
   bottom: 4em;
   left: 1em;
   right: 1em;
-  font-family: "Lato", sans-serif; }
+  font-family: $sans-serif; }
 .video-js .vjs-text-track {
   display: none;
   color: white;
@@ -2166,7 +2175,7 @@ body.vjs-full-window {
   height: 20px;
   width: 50px;
   top: 16px;
-  font: 300 13px "Lato", sans-serif; }
+  font: 300 13px $sans-serif; }
 
 .vjs-current-time {
   right: 128px;
@@ -2542,3 +2551,7 @@ body.vjs-full-window {
 
 .mll, .mhl, .mal {
   margin-left: 20px; }
+
+.well {
+	border: none;
+}
