@@ -25,10 +25,13 @@
     </div>
 
     <div class="span4 subheader-content text-center">
+
+    <% unless @hackathon.user_participating?(current_user) %>
       <%= form_for(@participant) do |f| %>
         <%= f.hidden_field :hackathon_id, :value => params[:id] %>
         <%= f.submit "Create Team", class: 'btn btn-primary btn-large' %>
       <% end %>
+    <% end %>
      
     </div>
   </div>
