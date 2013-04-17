@@ -11,6 +11,20 @@ class Hackathon < ActiveRecord::Base
   validates_attachment_presence :image unless :image
   validates_attachment_content_type :image, :content_type => ['image/jpg', 'image/jpeg', 'image/png']
 
+  def user_participating?(user)
+    true if self.teams.any? { |team| team.teammates.any? { |teammate| teammate.user_id == user.id }}
+  end
 
+  def participating_users
+    self.teams.collect { |team| team.teammates }.flatten.collect { |teammate| teammate.user_id }.uniq
+  end
+
+  def potential_teammates
+    User.all.collect { |user| user.id } - self.participating_users
+  end
+
+  def load_potential_teammates
+    self.potential_teammates.collect { |id| User.find(id) }
+  end
 
 end

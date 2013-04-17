@@ -9,6 +9,7 @@ Codewithus::Application.routes.draw do
   get 'finish_account_signup' => "users#new_from_facebook"
   post 'finish_account_signup' => "users#create_from_facebook", :as => "finish_account_signup"
 
+  post 'add_teammate' => 'teammates#add_teammate'
 
   match 'auth/facebook/callback', to: 'users#facebook_auth'
   get 'auth/failure', to: redirect('/')
