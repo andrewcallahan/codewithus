@@ -57,7 +57,7 @@ class UsersController < ApplicationController
       end
     end
   end
-  
+
   def new_from_facebook
     @user = current_user
   end
