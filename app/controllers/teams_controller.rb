@@ -25,7 +25,7 @@ class TeamsController < ApplicationController
   # GET /teams/new.json
   def new
     @team = Team.new
-    @potential_teammates = User.all.delete_if { |user| user.id == current_user.id}
+    @potential_teammates = Hackathon.find(params[:hackathon_id]).load_potential_teammates
 
     respond_to do |format|
       format.html # new.html.erb

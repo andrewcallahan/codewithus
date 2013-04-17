@@ -15,5 +15,14 @@ $('document').ready(function(){
     // $('.teammate').after()
   })
 
+  $('.add_teammate').click(function(){
+    event.preventDefault();
+    
+    $.post('/add_teammate', function(data){
+      console.log(data);
+      $('.add_teammate').remove();
+    })
+  })
+
 });
 
