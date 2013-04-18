@@ -35,6 +35,29 @@
     <%= f.label :Upload_a_photo %><br />
     <%= f.file_field :image %>
   </div>
+
+  <%= fields_for(@user.user_skillcategories.build) do |skills| %>
+
+    <div class="field">
+      <label>Design</label>
+      <input type="range" min="1" max="3" name='user_skillcategory[Design]' value="<%= user_skillcategory_default(@user, 1) %>">
+      <output id="output" for="user_skillcategory[Design]">1</output>
+    <div>
+
+    <div class="field">
+      <label>Frontend</label>
+      <input type="range" min="1" max="3" name='user_skillcategory[Front End]' value="<%= user_skillcategory_default(@user, 2) %>">
+      <output id="output" for="user_skillcategory[Frontend]">1</output>
+    <div>
+
+    <div class="field">
+      <label>Backend</label>
+      <input type="range" min="1" max="3" name='user_skillcategory[Back End]' value="<%= user_skillcategory_default(@user, 3) %>">
+      <output id="output" for="user_skillcategory[Backend]">1</output>
+    <div>
+
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

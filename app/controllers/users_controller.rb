@@ -22,6 +22,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
+    params[:user_skillcategory].each do |skill, level|
+      skill = Skillcategory.find_by_name(skill)
+      user_skill = @user.user_skillcategories.find_or_create_by_skillcategory_id(skill.id)
+      user_skill.level = level
+      user_skill.save
+    end
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to user_path(@user), :notice => "Profile updated!" }
+        format.json { render json: @users }
+      else
+        format.html { render :action => "edit" }
+        format.json { render :json => @user.errors, :notice => "Sorry, your profile could not be updated."}
+      end
+    end
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
