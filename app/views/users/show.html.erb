@@ -1,3 +1,5 @@
+<%= link_to "Edit Profile", edit_user_path(@user), :class => "btn" %>
+
 <% if current_user.identities %>
   <div><%= image_tag facebook_pic %></div>
 <% else %>
@@ -27,5 +29,4 @@ Hackathons:
     <li><%= hackathon.price %></li>
   <% end %>
 </ul>
-
 
