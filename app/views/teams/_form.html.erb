@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field span8">
-    <%= f.label "Team Name" %><br />
-    <%= f.text_field :name, :class => "span11" %>
-  </div>
+    <%= f.label "Team Project (optional)" %><br />
+    <%= f.text_field :project, :class => "span11" %>
+  </div>  
 
   <div class="field span8">
-    <%= f.label "Team Project (optional)" %><br />
-    <%= f.text_area :project, :class => "span11" %>
+    <%= f.label "Team Name" %><br />
+    <%= f.text_field :name, :class => "span11" %>
   </div>
 
   <% if @current_teammates %>
@@ -45,13 +45,13 @@
     <%= options_from_collection_for_select(@potential_teammates, :id, :name) %>
   </select>
 
-  
-  <!-- <div class="field">
-    <%#= f.label "What other type of people with the following skills would you like to have join your team?" %><br />
-    <%#= f.text_field :email %>
-  </div> -->
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+  <!-- <div class="field">
+    <%#= f.label "What other type of people with the following skills would you like to have join your team?" %><br />
+    <%#= f.text_field :email %>
+  </div> -->
