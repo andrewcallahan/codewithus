@@ -22,8 +22,8 @@ Hackathons:
 
 <ul>
   <% @user.hackathons.each do |hackathon| %>
-    <li><%= image_tag hackathon.image %></li>
-    <li><%= hackathon.name %></li>
+    <li><%= link_to(image_tag(hackathon.image), hackathon_path(hackathon)) %></li>
+    <li><%= link_to(hackathon.name, hackathon_path(hackathon)) %></li>
     <li><%= hackathon.start %></li>
     <li><%= hackathon.location %></li>
     <li><%= hackathon.price %></li>

@@ -50,6 +50,13 @@
         <h3 class="tile-title">
           <%= team.name %>
         </h3>
+        <h4>
+          <% if team.project.present? %>
+            <%= team.project %>
+          <% else %>
+            No project stated
+          <% end %>
+        </h4>
         <ul>
           <% team.teammates.each do |user| %>
           <li><%= link_to(User.find(user.user_id).name, "/users/#{user.user_id}") %></li>

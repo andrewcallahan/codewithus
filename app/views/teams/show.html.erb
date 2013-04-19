@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h3><%= @team.name %></h3>
+<h4>
+  <% if @team.project %>
+    <%= @team.project %>
+  <% else %>
+    No project stated
+  <% end %>
+</h4>
 <h5>Teammates</h5>
 <ul>
   <% @team.teammates.each do |t| %>
@@ -8,5 +15,5 @@
   <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_hackathon_team_path(@team) %> |
+<%= link_to 'Edit', "/hackathons/#{@team.hackathon.id}/teams/#{@team.id}/edit" %> |
 <%= link_to 'Back To Hackathon', hackathon_path(@team.hackathon) %>
