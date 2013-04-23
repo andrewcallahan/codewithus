@@ -23,8 +23,8 @@ class Hackathon < ActiveRecord::Base
     User.all.collect { |user| user.id } - self.participating_users
   end
 
-  def load_potential_teammates
-    self.potential_teammates.collect { |id| User.find(id) }
+  def load_potential_teammates(user)
+    self.potential_teammates.collect { |id| User.find(id) } - [user]
   end
 
 end
