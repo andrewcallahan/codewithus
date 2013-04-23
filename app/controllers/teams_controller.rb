@@ -48,8 +48,7 @@ class TeamsController < ApplicationController
     @team.hackathon_id = hackathon.id
     @team.creator_id = current_user.id
     @team.project = params[:team][:project] unless params[:team][:project] = ""
-    binding.pry
-
+    
     params[:teammates].uniq.each do |user_id|
       new_teammate = @team.teammates.build(:user_id => user_id)
     end
