@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all
+    @teams = Team.where(:hackathon_id => params[:hackathon_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,7 +25,7 @@ class TeamsController < ApplicationController
   # GET /teams/new.json
   def new
     @team = Team.new
-    @potential_teammates = Hackathon.find(params[:hackathon_id]).load_potential_teammates
+    @potential_teammates = Hackathon.find(params[:hackathon_id]).load_potential_teammates(current_user)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +36,8 @@ class TeamsController < ApplicationController
   # GET /teams/1/edit
   def edit
     @team = Team.find(params[:id])
+    @current_teammates = @team.teammates.collect { |teammate| User.find(teammate.user_id) }
+    @potential_teammates = Hackathon.find(params[:hackathon_id]).load_potential_teammates(current_user)
   end
 
   # POST /teams
@@ -46,7 +48,8 @@ class TeamsController < ApplicationController
     @team.hackathon_id = hackathon.id
     @team.creator_id = current_user.id
     @team.project = params[:team][:project] unless params[:team][:project] = ""
-    params[:teammates].each do |user_id|
+    
+    params[:teammates].uniq.each do |user_id|
       new_teammate = @team.teammates.build(:user_id => user_id)
     end
     respond_to do |format|
